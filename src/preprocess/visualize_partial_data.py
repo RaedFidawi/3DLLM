@@ -91,7 +91,7 @@ if __name__ == "__main__":
                 raise ValueError("At least one resolution must be provided")
 
             first_res = resolutions[0]
-            base_path = os.getenv(f"PARTIAL_DATA_DIR_{first_res}")
+            base_path = os.getenv(f"PARTIAL_DATA_DIR_{first_res}_PLANE_5")
             if base_path is None:
                 raise EnvironmentError(f"Environment variable 'PARTIAL_DATA_DIR_{first_res}' is not set.")
             all_files = [f for f in os.listdir(base_path) if f.endswith('.npz')]
@@ -99,7 +99,7 @@ if __name__ == "__main__":
             selected_files = random.sample(clean_files, min(count, len(clean_files)))
 
             for res in resolutions:
-                DATA_PATH = os.getenv(f"PARTIAL_DATA_DIR_{res}")
+                DATA_PATH = os.getenv(f"PARTIAL_DATA_DIR_{first_res}_PLANE_5")
                 if DATA_PATH is None:
                     raise EnvironmentError(f"Environment variable 'PARTIAL_DATA_DIR_{res}' is not set.")
                 for fname in selected_files:
@@ -114,6 +114,6 @@ if __name__ == "__main__":
         VOXEL_RESOLUTION = int(sys.argv[-1])
         DATA_PATH = os.getenv(f"PARTIAL_DATA_DIR_{VOXEL_RESOLUTION}")
         if DATA_PATH is None:
-            raise EnvironmentError(f"Environment variable 'PARTIAL_DATA_DIR_{VOXEL_RESOLUTION}' is not set.")
+            raise EnvironmentError(f"Environment variable 'PARTIAL_DATA_DIR_{VOXEL_RESOLUTION}_PLANE_5' is not set.")
         for fname in selected_files:
             visualize(fname, DATA_PATH, VOXEL_RESOLUTION)
