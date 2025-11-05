@@ -1,0 +1,11 @@
+Found 256571 total NPZ files in zip: /home/rnf14/thesis/3DLLM/data/chunk_data_16_flood_fill_rm_20.zip
+Total dataset size: 256571
+Using device: cuda
+Epoch [1/2] - Training Loss: 0.3039
+Epoch [1/2] - Validation Loss: 0.2800
+
+Epoch [2/2] - Training Loss: 0.2745
+Epoch [2/2] - Validation Loss: 0.2651
+
+✅ Training complete. Losses saved to 'train_loss.csv' and 'val_loss.csv'.
+Model saved to ./iterative_model.pth
